@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RadioButton android:id="@+id/nairobiEldoret" android:text="Nairobi - Eldoret" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <RadioButton android:id="@+id/nairobiKisumu" android:text="Nairobi - Kisumu" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <RadioButton android:id="@+id/eldoretNakuru" android:text="Eldoret - Nakuru" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <RadioButton android:id="@+id/kisumuKisii" android:text="Kisumu - Kisii" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/proceedButton" android:text="Proceed" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>
