@@ -10,7 +10,7 @@
     <EditText android:id="@+id/idNumber" android:hint="ID Number" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone"/>
     <EditText android:id="@+id/driversLicense" android:hint="Driver's License" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone"/>
     <ImageView android:id="@+id/vehicleRegDocs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_upload"/>
-    <ImageView android:id="@+id/photoUpload" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_camera"/>
+    <ImageView android:id="@+id/photoUpload" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_upload"/>
     <EditText android:id="@+id/password" android:hint="Password" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword"/>
     <EditText android:id="@+id/confirmPassword" android:hint="Confirm Password" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword"/>
 

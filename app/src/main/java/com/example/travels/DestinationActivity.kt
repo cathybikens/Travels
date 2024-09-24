@@ -43,6 +43,7 @@ class DestinationActivity : AppCompatActivity() {
             intent.putExtra("destination", destination)
             intent.putExtra("price", price)
             startActivity(intent)
+            finish()
         }
     }
 }

@@ -44,7 +44,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.1" // Ensure this matches your Compose version
     }
 
     packaging {
@@ -63,17 +63,28 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.appcompat) // You can keep this if it's defined in libs
-    implementation ("androidx.appcompat:appcompat:1.3.1") // Added line for appcompat
+
+    // Ensure appcompat is only declared once
+    implementation(libs.androidx.appcompat)
+    implementation("androidx.appcompat:appcompat:1.6.1") // Updated to a more recent version
+
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation("androidx.sqlite:sqlite:2.1.0") // Use string syntax for library dependency
+
+    implementation("androidx.sqlite:sqlite:2.1.0") // Valid dependency
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")  // Retrofit
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")  // Gson Converter
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("androidx.media3:media3-common:1.0.0") // Ensure this is the correct version
+    implementation(libs.androidx.media3.common.ktx)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }

@@ -9,6 +9,8 @@ import android.text.InputType
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
+
 
 class RegistrationActivity : AppCompatActivity() {
     private lateinit var fullName: EditText
@@ -24,9 +26,14 @@ class RegistrationActivity : AppCompatActivity() {
     private lateinit var showPasswordToggle: CheckBox
     private var isDriver = false
 
+    private lateinit var dbHelper: DatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
+
+        // Initialize DatabaseHelper
+        dbHelper = DatabaseHelper(this)
 
         fullName = findViewById(R.id.fullName)
         phoneNumber = findViewById(R.id.phoneNumber)
@@ -69,14 +76,29 @@ class RegistrationActivity : AppCompatActivity() {
 
         registerButton.setOnClickListener {
             if (validateFields()) {
-                Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
-                val intent = if (isDriver) {
-                    Intent(this, InspectionBookingActivity::class.java)
+                // Save user info to the database
+                val role = if (isDriver) "driver" else "customer"
+                val userId = dbHelper.addUser(
+                    fullName.text.toString(),
+                    phoneNumber.text.toString(),
+                    role
+                )
+
+                // Log the userId for debugging
+                Log.d("RegistrationActivity", "User ID: $userId")
+
+                if (userId != -1L) {
+                    Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
+                    val intent = if (isDriver) {
+                        Intent(this, InspectionBookingActivity::class.java)
+                    } else {
+                        Intent(this, CustomerDashboardActivity::class.java)
+                    }
+                    startActivity(intent)
+                    finish()
                 } else {
-                    Intent(this, CustomerDashboardActivity::class.java)
+                    Toast.makeText(this, "Registration failed", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-                finish()
             }
         }
     }

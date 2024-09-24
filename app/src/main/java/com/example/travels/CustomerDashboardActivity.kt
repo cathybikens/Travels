@@ -1,8 +1,9 @@
 package com.example.travels
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.GridLayout
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 
 class CustomerDashboardActivity : AppCompatActivity() {
@@ -14,14 +15,22 @@ class CustomerDashboardActivity : AppCompatActivity() {
 
     private fun setupSeats() {
         val seatCount = 14
-        val seatLayout = findViewById<RelativeLayout>(R.id.seatLayout)
+        val seatLayout = findViewById<GridLayout>(R.id.seatLayout)
 
         for (i in 0 until seatCount) {
             val seat = ImageView(this)
-            seat.layoutParams = RelativeLayout.LayoutParams(50, 50)
+            val params = GridLayout.LayoutParams()
+            params.width = 0
+            params.height = GridLayout.LayoutParams.WRAP_CONTENT
+            params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
+            params.setMargins(10, 10, 10, 10)
+            seat.layoutParams = params
             seat.setImageResource(R.drawable.seat_available)
             seat.setOnClickListener {
                 seat.setImageResource(R.drawable.seat_booked)
+                val intent = Intent(this, DestinationActivity::class.java)
+                startActivity(intent)
+                finish()
             }
             seatLayout.addView(seat)
         }

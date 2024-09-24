@@ -5,10 +5,33 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <RadioButton android:id="@+id/nairobiEldoret" android:text="Nairobi - Eldoret" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-    <RadioButton android:id="@+id/nairobiKisumu" android:text="Nairobi - Kisumu" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-    <RadioButton android:id="@+id/eldoretNakuru" android:text="Eldoret - Nakuru" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-    <RadioButton android:id="@+id/kisumuKisii" android:text="Kisumu - Kisii" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <RadioButton
+        android:id="@+id/nairobiEldoret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nairobi - Eldoret" />
 
-    <Button android:id="@+id/proceedButton" android:text="Proceed" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <RadioButton
+        android:id="@+id/nairobiKisumu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nairobi - Kisumu" />
+
+    <RadioButton
+        android:id="@+id/eldoretNakuru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eldoret - Nakuru" />
+
+    <RadioButton
+        android:id="@+id/kisumuKisii"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kisumu - Kisii" />
+
+    <Button
+        android:id="@+id/proceedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proceed" />
 </LinearLayout>

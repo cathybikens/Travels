@@ -3,9 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <GridLayout
         android:id="@+id/seatLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:columnCount="2"
+        android:rowCount="7"
+        android:padding="16dp"
+        android:alignmentMode="alignBounds"
+        android:columnOrderPreserved="false"/>
 </RelativeLayout>
